@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <string.h>
 
 int resp;
 
@@ -13,21 +12,21 @@ int clrbuffer (void) {
 	};
 	return resp;
 }
-int banana(int a,int b) {
-if(a==1&&(b<=3&&b>=1)) {return 1;};
+int p(int a) {
+if(a==1) {return 1;};
 return 0;
 }
-int massan(int a,int b) {
-if(a==2&&(b<=6&&b>=4)) {return 1;};
+int q(int b) {
+if(b<=6&&b>=4) {return 1;};
 return 0;
 }
 
 int main(void) {
-int perg1,perg2;
+int perg1,perg2,h,m;
 do {
 printf("\n==Homem ou Mulher?==\n");
 printf("\n0.Sair\n");
-printf("\n1.Homem==\n");
+printf("\n1.Homem\n");
 printf("\n2.Mulher?\n");
 perg1=clrbuffer();
 if(perg1==0) {break;}
@@ -39,14 +38,15 @@ printf("\n3.Caminhao\n");
 printf("\n4.Patins\n");
 printf("\n5.Patinete\n");
 printf("\n6.Motonete\n");
+if(perg2==0) {break;}
 perg2=clrbuffer();
-
-
+h=p(perg1)?1:0;
+m=q(perg2)?1:0;
+if((perg1!=0)&&(perg2!=0)) {
+	if(h&&m) printf("\nHOMEM AFEMINADO\n");
+	if(!h&&!m) printf("\nMULHER MACHO\n");
+	if(!h&&m) printf("\nMULHER\n");
+	if(h&&!m) printf("\nHOMEM\n");
+    }
   } while((perg1!=0)&&(perg2!=0));
 }
-/* int viado(void) {
-	
-}
-int homem(void) {
-	
-}*/
