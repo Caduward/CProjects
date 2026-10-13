@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 unsigned int escolha;
 int status;
@@ -14,6 +15,7 @@ enum resposta {
 int leituraLimpa(unsigned int *entrada) {
 if (scanf("%u",entrada)!=1) {
 	while(getchar()!='\n');
+	printf("\n==>Resposta inválida<==\n\n\n");
 	return status = RODANDO;
   }
   return status = PARADO;	
@@ -26,5 +28,18 @@ printf("\n1.Genética de Mendel\n");
 printf("\n2.(WIP)\n");
 leituraLimpa(&escolha);
   } while(status||(escolha)>2);
-  printf("\nPASSOU!\n");
+escolha++;
+switch(escolha) {
+case ESCOLHA_1:
+  do {
+printf("\n\n\n\n==Qual a combinação?==\n\n");
+printf("\n1.Homozigoto x Homozigoto\n");
+printf("\n2.Homozigoto x Heterozigoto\n");
+printf("\n3.Heterozigoto x Heterozigoto\n\n\n");
+leituraLimpa(&escolha);
+} while(status||(escolha+1)>4);
+
+case ESCOLHA_2:
+break;
+  }
 }
