@@ -2,14 +2,28 @@
 #include <stdlib.h>
 #include <math.h>
 
+unsigned int escolha;
+int status;
+enum resposta {
+	PARADO = -1,
+	RODANDO = 0,
+	ESCOLHA_1 = 1,
+	ESCOLHA_2 = 2,
+	ESCOLHA_3 = 3,
+	};
+int leituraLimpa(unsigned int *entrada) {
+if (scanf("%d",entrada)!=1) {
+	while(getchar()!='\n');
+	return status += PARADO;
+  }
+  return status += RODANDO;	
+}
 
 int main(void) {
-double notas[6];
-printf("\n%ld\n",sizeof(notas));
-printf("\n%ld\n",sizeof(notas[0]));
-printf("\n%ld elementos\n",(sizeof(notas)/sizeof(notas[0])));
-
-const char *classe[] = {"Tank", "Healer", "Dano"};
-printf("\n%s\n",classe[1]);
-
+do {
+printf("==ESCOLHA O TIPO DE SIMULAÇÃO==");
+printf("\n1.Genética de Mendel\n");
+printf("\n2.(WIP)\n");
+if (leituraLimpa(&escolha)!=1||escolha>2) {printf("\nResposta Invalida\n"); return PARADO;}
+  } while(!escolha);
 }
